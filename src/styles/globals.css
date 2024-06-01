@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Optional: Add some custom global styles if needed */
+body {
+  @apply bg-gray-100;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  @apply text-4xl font-bold mb-8;
+}
+
+input {
+  @apply w-full p-2 border border-gray-300 rounded mb-4;
+}
+
+button {
+  @apply w-full bg-blue-500 text-white p-2 rounded;
+}
+
+pre {
+  @apply mt-4 bg-white p-4 border border-gray-300 rounded w-full max-w-3xl overflow-auto;
+}
+
+/* styles/globals.css */
+.custom-radio {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.custom-radio:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #2196f3;
+  transform: scale(0);
+  transition: transform 0.3s;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + .custom-radio {
+  background-color: #2196f3;
+  border-color: #2196f3;
+}
+
+input[type="radio"]:checked + .custom-radio:before {
+  transform: scale(1);
+}
